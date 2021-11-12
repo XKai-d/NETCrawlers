@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    fieldset {
+        width: 90%;
+        margin: auto;
+    }
+
+    #TextArea1 {
+        max-width: 600px !important;
+        width: 600px !important;
+        height: 200px !important;
+    }
+</style>
+<div style="width:100%;margin-top:50px;">
+    <div>
+        <div class="col-lg-6">
+            <fieldset>
+                <legend>基本设置</legend>
+                <p><label class="control-label">关键词</label><input type="text" class="form-control" id="KeyName" name="name" value="" /></p>
+                <p><label class="control-label">页数</label><input type="number" class="form-control" value="1" min="0" max="26" id="PageNum" name="name" /></p>
+                @*<p><label class="control-label">保存路径</label><input type="text" class="form-control" id="SavePath" name="name" value="" /></p>
+                    <p><input id="BtnPath" type="button" value="选择路径" /></p>*@
+            </fieldset>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <fieldset>
+            <legend>筛选设置</legend>
+            <p>
+                <label class="control-label">图片主题</label>
+                <select id="setMain" class="form-control">
+                    <option value="0" selected>全部颜色</option>
+                    <option value="1">红色</option>
+                    <option value="2">黄色</option>
+                    <option value="4">绿色</option>
+                    <option value="8">青色</option>
+                    <option value="16">蓝色</option>
+                    <option value="32">紫色</option>
+                    <option value="64">粉色</option>
+                    <option value="128">棕色</option>
+                    <option value="256">橙色</option>
+                    <option value="512">黑色</option>
+                    <option value="1024">白色</option>
+                    <option value="2048">黑白</option>
+                </select>
+            </p>
+            @*<p>
+                    <label class="control-label">图片类型</label>
+                    <select id="setType" class="form-control">
+                        <option value="-1" selected>全部类型</option>
+                        <option value="-1 s 1">头像图片</option>
+                        <option value="-1 face 1">面部特写</option>
+                        <option value="1">卡通画</option>
+                        <option value="2">简笔画</option>
+                        <option value="-1 lm 6">动态图片</option>
+                        <option value="-1 lm 7">静态图片</option>
+                    </select>
+                </p>*@
+            <p>
+                <label class="control-label">图片尺寸</label>
+                <select id="setMax" class="form-control">
+                    <option value="" selected>全部尺寸</option>
+                    <option value="1">小型图片</option>
+                    <option value="2">中型图片</option>
+                    <option value="3">大型图片</option>
+                    <option value="9">特大型图片</option>
+                </select>
+            </p>
+            <p><input id="BtnDownload" type="button" value="开始下载" /></p>
+            <p><label class="control-label">图片尺寸</label><br />高：<input type="text" class="form-control" id="ImgHeight" name="name" value="" />宽：<input type="text" class="form-control" id="ImgWidth" name="name" value="" /></p>
+        </fieldset>
+    </div>
+    <p><textarea id="TextArea1" rows="8" cols="40"></textarea></p>
+</div>
+@section scripts{
+    <script>
+        @*//选择路径
+        $("#BtnPath").click(function () {
+            $.ajax({
+                url: "/Home/SetPath",
+                type: "post",
+                success: function (res) {
+                    $("#SavePath").val(@Session["result"].ToString());
+                }
+            });
+        })*@
+        ////开始下载
+        //$("#BtnDownload").click(function () {
+        //    //关键词
+        //    var Key = $("#KeyName").val();
+        //    //保存路径
+        //    var Save = $("#SavePath").val();
+        //    if (Key != "" && Save != "") {
+        //        $.ajax({
+        //            url: "/Home/DownloadPath",
+        //            type: "post",
+        //            data: { "key": Key, "save": Save },
+        //            success: function (res) {
+
+        //            }
+        //        })
+        //    }
+        //    else {
+        //        alert('数据不能为空')
+        //    }
+        //})
+         //开始下载
+        $("#BtnDownload").click(function () {
+            //关键字
+            var key = $("#KeyName").val();
+            //页数
+            var page = $("#PageNum").val();
+            //颜色
+            var color = $("#setMain").val();
+            //大小
+            var max = $("#setMax").val();
+            $.ajax({
+                url: "/Home/Downloadworld",
+                type: "post",
+                data: { "keyname": key, "zMax": max, "ICColor": color, "page": page},
+                success: function (res) {
+                    $("#TextArea1").val(res);
+                }
+            })
+        })
+    </script>
+}

@@ -1,0 +1,13 @@
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.exe
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.deps.json
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.runtimeconfig.json
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.runtimeconfig.dev.json
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.dll
+D:\桌面\.NET爬虫\NETCrawler\Test\bin\Debug\netcoreapp3.1\Test.pdb
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.csproj.AssemblyReference.cache
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfoInputs.cache
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfo.cs
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreCompileInputs.cache
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.dll
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.pdb
+D:\桌面\.NET爬虫\NETCrawler\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
